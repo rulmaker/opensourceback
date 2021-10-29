@@ -2,26 +2,41 @@ package com.pruebas.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Persona {
     @Id
-    private Integer id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
+    private Integer idproducto;
+    @Column
+    private String imagen;
     @Column
     private String nombre;
     @Column
-    private String apellido;
+    private String precio;
     @Column
-    private Integer edad;
+    private String genero;
+    @Column
+    private String talla;
 
-    //Setters and Getters
-    public Integer getId() {
-        return id;
+    public Integer getIdproducto() {
+        return idproducto;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setIdproducto(Integer idproducto) {
+        this.idproducto = idproducto;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 
     public String getNombre() {
@@ -32,19 +47,27 @@ public class Persona {
         this.nombre = nombre;
     }
 
-    public String getApellido() {
-        return apellido;
+    public String getPrecio() {
+        return precio;
     }
 
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setPrecio(String precio) {
+        this.precio = precio;
     }
 
-    public Integer getEdad() {
-        return edad;
+    public String getGenero() {
+        return genero;
     }
 
-    public void setEdad(Integer edad) {
-        this.edad = edad;
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
+    public String getTalla() {
+        return talla;
+    }
+
+    public void setTalla(String talla) {
+        this.talla = talla;
     }
 }
